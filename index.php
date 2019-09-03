@@ -8,11 +8,17 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script>
+            var codUsuario = "<?php echo $_SESSION['Codigo_Vendedor'] ?>";
+            console.log(codUsuario);
+        </script>    
     </head>
     <body>
         <?php
+            $codUsuario = $_SESSION['Codigo_Vendedor'];
             $local_file = './descargas/archivo.txt'; //Nombre archivo en nuestro PC
-            $server_file = 'public_html/prueba.txt'; //Nombre archivo en FTP
+            //$server_file = 'public_html/prueba.txt'; //Nombre archivo en FTP
 
             // Establecer la conexión
             $ftp_server='files.000webhost.com';
@@ -68,17 +74,35 @@
             $file_list = ftp_nlist($conn_id, "public_html/");
             foreach ($file_list as $file)
             {
-                if($file != '.' && $file != '..'){
+                $fileSubtr = substr($file,0,1);
+                if($fileSubtr != '.'){
                     $ruta_archivo = "public_html/".$file;
-                    echo "<br><a href=''>Archivo: $file</a>";
+                    echo "<br><a href='' file='$file'>Archivo: $file</a>";
                 }
             }
 
             // Cerrar la conexión
-            ftp_close($conn_id);
+            //ftp_close($conn_id);
         ?>
         <script>
-            
+            $(document).ready(function(){
+                $('a').on('click', function(e){
+                    var file = $(this).attr('file');
+                    e.preventDefault();
+                    console.log(file);
+                   <?php
+                        $files = "document.writeln(file);";
+                        $prueba = $files;
+                        $server_file = 'public_html/'.$files; //Nombre archivo en FTP
+                        if (ftp_get($conn_id, $local_file, $server_file, FTP_BINARY)) {
+                            ?>alert("Se descargado el archivo con éxito");<?php
+                        } else {
+                            ?>alert("Ha ocurrido un error");<?php
+                        }                                                
+                    ?>
+        
+                });
+            });
         
         
         
