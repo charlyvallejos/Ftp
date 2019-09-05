@@ -71,34 +71,34 @@
 //            //Llamamos a la función y le pasamos el nombre de nuestro directorio.
 //            listFiles("/");
             
-            $file_list = ftp_nlist($conn_id, "public_html/");
+            $file_list = ftp_nlist($conn_id, "public_html/descargas");
             foreach ($file_list as $file)
             {
                 $fileSubtr = substr($file,0,1);
                 if($fileSubtr != '.'){
-                    $ruta_archivo = "public_html/".$file;
-                    echo "<br><a href='' file='$file'>Archivo: $file</a>";
+                    $ruta_archivo = "loadData.php?archivo=".$file;
+                    echo "<br><a href='$ruta_archivo' file='$file'>Archivo: $file</a>";
                 }
             }
 
             // Cerrar la conexión
-            //ftp_close($conn_id);
+            ftp_close($conn_id);
         ?>
         <script>
             $(document).ready(function(){
                 $('a').on('click', function(e){
-                    var file = $(this).attr('file');
-                    e.preventDefault();
-                    console.log(file);
-                   <?php
-                        $files = "document.writeln(file);";
-                        $prueba = $files;
-                        $server_file = 'public_html/'.$files; //Nombre archivo en FTP
-                        if (ftp_get($conn_id, $local_file, $server_file, FTP_BINARY)) {
-                            ?>alert("Se descargado el archivo con éxito");<?php
-                        } else {
-                            ?>alert("Ha ocurrido un error");<?php
-                        }                                                
+//                    var file = $(this).attr('file');
+//                    e.preventDefault();
+//                    console.log(file);
+                    <?php
+//                        $files = "document.writeln(file);";
+//                        $prueba = $files;
+//                        $server_file = 'public_html/'.$files; //Nombre archivo en FTP
+//                        if (ftp_get($conn_id, $local_file, $server_file, FTP_BINARY)) {
+//                            ?>//alert("Se descargado el archivo con éxito");<?php
+//                        } else {
+//                            ?>//alert("Ha ocurrido un error");<?php
+//                        }                                                
                     ?>
         
                 });
