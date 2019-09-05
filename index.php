@@ -76,8 +76,29 @@
             {
                 $fileSubtr = substr($file,0,1);
                 if($fileSubtr != '.'){
-                    $ruta_archivo = "loadData.php?archivo=".$file;
-                    echo "<br><a href='$ruta_archivo' file='$file'>Archivo: $file</a>";
+                    $array = split("_", $file);   
+                    $mesNum = $array[1];
+                    
+                    switch($mesNum){
+                        case 1: $mesNom = 'Enero';
+                            break;
+                        case 2: $menNom = 'Febrero';
+                            break;
+                        case 3: $mesNom = 'Marzo';
+                            break;
+                        case 4: $mesNom = 'Abril';
+                            break;
+                        case 5: $mesNom = 'Mayo';
+                            break;
+                        case 6: $mesNom = 'Junio';
+                            break;
+                        case 7: $mesNom = 'Julio';
+                            break;                        
+                    }
+                    if($array[0] == $codUsuario){
+                        $ruta_archivo = "loadData.php?archivo=".$file;
+                        echo "<br><a href='$ruta_archivo' file='$file'>$mesNom: $file</a>";
+                    }
                 }
             }
 
