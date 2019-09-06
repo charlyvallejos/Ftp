@@ -14,9 +14,9 @@ class Config
     {
         $this->tipo = "mysql";
         $this->host = "localhost";
-        $this->dbname = "SaporitiWeb";
-        $this->user = "root";
-        $this->pw = "";
+        $this->dbname = "id10739155_saporitiweb";
+        $this->user = "id10739155_admin";
+        $this->pw = "deamon";
         $this->opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
     }
 }

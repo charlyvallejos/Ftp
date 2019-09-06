@@ -1,0 +1,98 @@
+@import url("normalize.css");
+
+*{margin:0; padding:0}
+body, html{
+    /*background: #EEE;*/
+    background: white;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 1em;
+    text-align: center;
+
+}
+
+img{
+    max-width: 100%;
+}
+
+#cabecera, #contenido{
+  /*  display: inline-block;
+    vertical-align: top;*/
+}
+
+#cabecera,#contenido{
+    padding:10px;
+    margin:0 !important;
+}
+
+
+.cabecera,.contenido{
+    padding-right:0;
+    padding-left:0;
+}
+
+.error{
+    /*background-color: #a62833;*/
+    margin: 5px auto;
+    width: 450px;
+    padding: 10px;
+    /*color: #a62833;*/
+    text-align: center;
+    color: #E9EDEF;
+    background-color: rgba(165, 38, 38, 0.88);
+    border-color: rgba(178, 40, 48, 0.88);
+    border-radius: 2px;
+}
+
+.exito{
+    /*background-color: #2e9123;*/
+    margin: 5px auto;
+    width: 450px;
+    padding: 10px;
+    /*color: #2e9123;*/
+    text-align: center;
+    color: #585858;
+    background-color: rgba(170, 224, 189, 0.88);
+    border-color: rgba(38, 185, 154, 0.88);
+    border-radius: 2px;
+}
+
+.formulario, .tabla p{
+    text-align: left;
+}
+
+.formulario div{
+    margin: 1em auto;
+}
+
+.formulario legend{
+    font-size: .5em;
+    font-weight: bold;
+}
+
+
+.paginacion a, .actual{
+    color:#a62833;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.paginacion a:hover, .actual{
+    color: #23ab8e;
+}
+
+.actual{
+    font-size: 3rem;
+}
+
+.centrar{
+    text-align: center;
+}
+
+
+.ocultar{
+    display:none;
+}
+

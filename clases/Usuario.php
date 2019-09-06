@@ -41,9 +41,9 @@ class Usuario
     }
     public function autenticar(){
         if(isset($_SESSION['logueado']))
-            return true;
-        else
             return false;
+        else
+            return true;
     }
 
     public function logout(){
