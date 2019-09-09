@@ -76,7 +76,7 @@
             {
                 $fileSubtr = substr($file,0,1);
                 if($fileSubtr != '.'){
-                    $array = split("_", $file);   
+                    $array = explode("_", $file);   
                     $mesNum = $array[1];
                     
                     switch($mesNum){

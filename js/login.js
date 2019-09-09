@@ -76,10 +76,11 @@ var app = angular.module('appLogin', ['ngMessages'])
                     if(resp.data.ok === true){
                         $scope.msj = "";
                         $window.location.reload();
+                        //console.log("hola");
                     }
                     else {
                            $scope.msj = "Contraseña incorrecta";
-                           console.log(resp.data.ok);
+                           console.log("chau");
                     }
                 })
                 .catch(function(resp){

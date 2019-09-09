@@ -10,9 +10,9 @@ class Usuario
 
     public function login(){
         $sql = "SELECT Nombre_Vendedor, Codigo_Vendedor FROM usuarios WHERE Usuario_Login = :Usuario_Login AND Clave = :Clave";
-        $conexion = Conexion::conectar();
+        $conexion = Conexion::conectar();        
         $query = $conexion->prepare($sql);
-        $ok = array("ok" => 'false');
+        $ok = array("ok" => false);
         if(isset($_POST))
         {
             $usuLogin = $_POST['Usuario_Login'];
@@ -39,11 +39,12 @@ class Usuario
         else
             return json_encode($ok);
     }
+    
     public function autenticar(){
         if(isset($_SESSION['logueado']))
-            return false;
-        else
             return true;
+        else
+            return false;
     }
 
     public function logout(){
