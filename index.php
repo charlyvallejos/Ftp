@@ -15,10 +15,13 @@
         </script>    
     </head>
     <body>
+        <div ng-controller="loginController">
+            <a href="" ng-click="logout()">Cerrar Sesión</a>
+        </div>
         <?php
             $codUsuario = $_SESSION['Codigo_Vendedor'];
             $local_file = './descargas/archivo.txt'; //Nombre archivo en nuestro PC
-            //$server_file = 'public_html/prueba.txt'; //Nombre archivo en FTP
+            
 
             // Establecer la conexión
             $ftp_server='files.000webhost.com';
@@ -97,7 +100,7 @@
                     }
                     if($array[0] == $codUsuario){
                         $ruta_archivo = "loadData.php?archivo=".$file;
-                        echo "<br><a href='$ruta_archivo' file='$file'>$mesNom: $file</a>";
+                        echo "<br><a href='descargas/$file' download='$file' file='$file'>$mesNom: $file</a>";
                     }
                 }
             }

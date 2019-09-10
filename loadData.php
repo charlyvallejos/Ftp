@@ -16,7 +16,7 @@ if(!empty(isset($_GET))){
         $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
         
         $file = $_GET['archivo'];
-        $local_file = 'c:/'.$file;
+        $local_file = 'descargas/'.$file;
         $server_file = 'public_html/descargas/'.$file; //Nombre archivo en FTP
         if (ftp_get($conn_id, $local_file, $server_file, FTP_BINARY)) {
             echo "Se descargado el archivo con éxito";
