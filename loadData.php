@@ -31,7 +31,7 @@ if(!empty(isset($_GET))){
     else
         if (isset($_GET['login'])){
             $usuario = new Usuario();
-            echo $usuario->login();
+            echo $usuario->login();            
         }
     else
         if(isset($_GET['logout']))

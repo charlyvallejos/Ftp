@@ -144,7 +144,7 @@
 -->
 <div class="loginForm">
     <div class="logo_sapo">
-        <img src="img/logo_saporiti.jpg" alt="Drogueria Saporiti" width="250px" height="90px">
+        <!--<img src="img/logo_saporiti.jpg" alt="Drogueria Saporiti" width="250px" height="90px">-->
     </div>
     <div>
         <p ng-model="msj" style="color:black">{{msj}}</p>

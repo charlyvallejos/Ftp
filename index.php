@@ -4,18 +4,23 @@
     if($usuario->autenticar())
     {
 ?>
-<html>
+<html ng-app="appLogin">
     <head>
         <meta charset="UTF-8">
         <title></title>
+        
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="js/jquery-ui.js"></script>  
+        <script src="js/angular.min.js"></script>
+        <script src="js/login.js"></script> 
+        <script src="https://code.angularjs.org/1.3.0-rc.2/angular-messages.js"></script>
         <script>
             var codUsuario = "<?php echo $_SESSION['Codigo_Vendedor'] ?>";
             console.log(codUsuario);
         </script>    
     </head>
-    <body>
-        <div ng-controller="loginController">
+    <body ng-controller="loginController">
+        <div>
             <a href="" ng-click="logout()">Cerrar Sesión</a>
         </div>
         <?php
