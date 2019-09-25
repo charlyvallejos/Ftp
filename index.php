@@ -7,7 +7,8 @@
 <html ng-app="appLogin">
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Facturas</title>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="js/jquery-ui.js"></script>  
@@ -21,7 +22,7 @@
     </head>
     <body ng-controller="loginController">
         <div>
-            <a href="" ng-click="logout()">Cerrar Sesión</a>
+            <a href="" ng-click="logout()" class="cerrarS">Cerrar Sesión</a>
         </div>
         <?php
             $codUsuario = $_SESSION['Codigo_Vendedor'];
@@ -105,7 +106,7 @@
                     }
                     if($array[0] == $codUsuario){
                         $ruta_archivo = "loadData.php?archivo=".$file;
-                        echo "<br><a href='descargas/$file' download='$file' file='$file'>$mesNom: $file</a>";
+                        echo "<br><h3>$mesNom:</h3>&nbsp;<a href='descargas/$file' download='$file' file='$file' class='descargas'> $file</a>";
                     }
                 }
             }
