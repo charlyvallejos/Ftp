@@ -79,6 +79,8 @@ class Usuario
     
     public function agregarUsuario(){
         $sql = "INSERT INTO usuarios VALUES()";
+        
+        
     }
     public function modificarClave(){
         if(isset($_POST)) {
