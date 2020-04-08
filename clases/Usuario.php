@@ -78,7 +78,16 @@ class Usuario
     }
     
     public function agregarUsuario(){
-        $sql = "INSERT INTO usuarios VALUES()";
+        $sql = "INSERT INTO usuarios VALUES(2,'charly',:clave,'carlos',2)";
+        $conexion = Conexion::conectar();
+        $query = $conexion->prepare($sql);
+        
+        $usuClave = base64_encode("blabla");
+        $usuClave = sha1($usuClave);
+        
+        $query->bindParam(":clave",$usuClave, PDO::PARAM_STR);
+        
+        $query->execute();
         
         
     }

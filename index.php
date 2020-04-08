@@ -1,6 +1,7 @@
 <?php
     require 'config/config.php';
     $usuario = new Usuario();
+    //$usuario->agregarUsuario();
     if($usuario->autenticar())
     {
 ?>
