@@ -32,7 +32,7 @@
 
             // Establecer la conexión
             $ftp_server='files.000webhost.com';
-            $ftp_user_name='charlyvallejos';
+            $ftp_user_name='charly-vallejos';
             $ftp_user_pass='pentium3';
             $conn_id = ftp_connect($ftp_server);
 
